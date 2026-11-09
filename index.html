@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<main class="calc" id="calc">
+  <header class="top">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <div class="modes">
+      <button class="chip active" data-mode="basic">Básica</button>
+      <button class="chip" data-mode="sci">Científica</button>
+    </div>
+    <button class="icon" id="histBtn" title="Histórico" aria-label="Histórico">⟲</button>
+    <button class="icon" id="themeBtn" title="Tema" aria-label="Alternar tema">◐</button>
+  </header>
+
+  <section class="screen" aria-live="polite">
+    <div class="expr" id="expr"></div>
+    <div class="result" id="result">0</div>
+    <div class="preview" id="preview"></div>
+  </section>
+
+  <section class="sci" id="sci">
+    <button data-fn="sin(">sin</button>
+    <button data-fn="cos(">cos</button>
+    <button data-fn="tan(">tan</button>
+    <button data-fn="log(">log</button>
+    <button data-fn="ln(">ln</button>
+    <button data-fn="√(">√</button>
+    <button data-v="^">xʸ</button>
+    <button data-v="²">x²</button>
+    <button data-v="!">n!</button>
+    <button data-v="π">π</button>
+    <button data-v="e">e</button>
+    <button id="degBtn">DEG</button>
+  </section>
+
+  <section class="keys">
+    <button class="k fn" data-a="clear">AC</button>
+    <button class="k fn" data-v="(">(</button>
+    <button class="k fn" data-v=")">)</button>
+    <button class="k op" data-v="÷">÷</button>
+
+    <button class="k" data-v="7">7</button>
+    <button class="k" data-v="8">8</button>
+    <button class="k" data-v="9">9</button>
+    <button class="k op" data-v="×">×</button>
+
+    <button class="k" data-v="4">4</button>
+    <button class="k" data-v="5">5</button>
+    <button class="k" data-v="6">6</button>
+    <button class="k op" data-v="−">−</button>
+
+    <button class="k" data-v="1">1</button>
+    <button class="k" data-v="2">2</button>
+    <button class="k" data-v="3">3</button>
+    <button class="k op" data-v="+">+</button>
+
+    <button class="k fn" data-v="%">%</button>
+    <button class="k" data-v="0">0</button>
+    <button class="k" data-v=",">,</button>
+    <button class="k fn" data-a="back">⌫</button>
+
+    <button class="k eq" data-a="eq">=</button>
+  </section>
+
+  <aside class="history" id="history">
+    <div class="hhead"><b>Histórico</b><button class="icon" id="clearHist" title="Limpar">🗑</button></div>
+    <ul id="histList"><li class="empty">Nada por aqui ainda ✨</li></ul>
+  </aside>
+</main>
+
+<footer class="credit">Feito por <a href="https://github.com/" id="me">Anthony Vidal</a></footer>
+<script src="script.js"></script>
+</body>
+</html>
